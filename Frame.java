@@ -7,9 +7,12 @@ import java.awt.*;
 
 public class Frame  extends JFrame {
 
-    PanelRecorrido panelRecorrido;
-    PanelHorario panelHorario;
-    PanelCompra panelCompra;
+    CardLayout cardLayout = new CardLayout();
+    JPanel cardPanel = new JPanel(cardLayout);
+
+    PanelRecorrido panelRecorrido = new PanelRecorrido(cardLayout,cardPanel);
+    PanelHorario panelHorario = new PanelHorario(cardLayout,cardPanel);
+    PanelCompra panelCompra = new PanelCompra(cardLayout,cardPanel);
 
     public Frame(){
 
@@ -20,6 +23,14 @@ public class Frame  extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE); //Cierra el programa al cerrar la ventana
         setLayout(new BorderLayout());//Permite organizar los JPanel
 
+        cardPanel.setLayout(cardLayout);
+
+        cardPanel.add(panelRecorrido,"Panel1");
+        cardPanel.add(panelHorario, "Panel2");
+        cardPanel.add(panelCompra, "Panel3");
+
+        this.add(cardPanel, BorderLayout.CENTER);
+        this.setVisible(true);
     }
 
 
