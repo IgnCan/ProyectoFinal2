@@ -1,5 +1,8 @@
 package Paneles;
 
+import AsignacionDeHorarios.AsignacionFinal;
+import Enums.Recorrido;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -33,6 +36,14 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         });
         add(backButton);
     }
+
+    public void mostrarPasajes(Recorrido rec) {
+        this.removeAll();
+
+        revalidate();
+        repaint();
+    }
+
     @Override
     public void avanPanel() {
         cardLayout.next(cardPanel);

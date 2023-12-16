@@ -12,6 +12,7 @@ import java.util.List;
  * Clase Asignaciones se encarga de asignar los horarios, tipo de bus y tipo de asientos diponibles para cada recorrido
  */
 public class Asignaciones {
+
     /**
      * asing es una lista que almacena las caracteristicas de cada recorrido
      */

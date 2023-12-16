@@ -9,6 +9,9 @@ import java.awt.*;
 
 public class Frame  extends JFrame implements APpanel2 {
 
+
+
+
     CardLayout cardLayout = new CardLayout();
     JPanel cardPanel = new JPanel(cardLayout);
 
@@ -17,6 +20,8 @@ public class Frame  extends JFrame implements APpanel2 {
     PanelCompra panelCompra = new PanelCompra(cardLayout,cardPanel);
 
     public Frame(){
+
+
 
         this.setSize(1000, 800);//Ancho y largo respectivamente
         setBackground(Color.CYAN);//Color de fondo

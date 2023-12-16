@@ -24,7 +24,6 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
         this.setBackground(Color.PINK);
-
     }
 
 
@@ -37,7 +36,7 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
             JButton boton = new JButton(asignacion.toString());
 
             /**
-             * Método para agregar acciones al presionar le jbutton del hora
+             * Método para agregar acciones al presionar el jbutton de la hora
              */
 
             boton.addActionListener(new ActionListener() {

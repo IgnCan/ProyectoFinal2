@@ -13,7 +13,6 @@ import java.util.*;
 public class AsignacionHorarios {
     private Map<Recorrido, List<AsignacionFinal>> asignaciones = new HashMap<>();
 
-
     /**
      *Método público que agrega listas con las asignaciones de cada bus a una lista más grande que las va a contener
      * @param recorrido
@@ -21,6 +20,7 @@ public class AsignacionHorarios {
      * @param tipoAsiento
      * @param tipoBus
      */
+
     public void AsingnacionFinal(Recorrido recorrido, Horario horario, TipoAsiento tipoAsiento, TipoBus tipoBus) {
         List<AsignacionFinal> asignacionFinal = asignaciones.getOrDefault(recorrido, new ArrayList<>());
         asignacionFinal.add(new AsignacionFinal(recorrido, horario, tipoAsiento, tipoBus));
