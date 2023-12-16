@@ -1,5 +1,7 @@
 package Paneles;
 
+import AsignacionDeHorarios.AsignacionFinal;
+
 public interface IdentificadorCallback {
-    void onIdentificadorSelected(String identificador);
+    void onIdentificadorSelected(AsignacionFinal asignacionFinal);
 }

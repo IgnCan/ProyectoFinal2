@@ -46,7 +46,7 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
                     System.out.println(asignacion.toString());
                     asignacionFinal=asignacion;
                     asignacionFinal.getTipoAsiento().getPresio();
-                    identificadorCallback.onIdentificadorSelected(asignacionFinal.toString());
+                    identificadorCallback.onIdentificadorSelected(asignacionFinal);
                 }
             });
             this.add(boton);

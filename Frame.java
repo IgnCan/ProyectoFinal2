@@ -1,5 +1,8 @@
+import AsignacionDeHorarios.AsignacionFinal;
 import Botones.Asientos;
 import Enums.Recorrido;
+import Enums.TipoAsiento;
+import Enums.TipoBus;
 import Paneles.*;
 import Paneles.IdentificadorCallback;
 
@@ -43,27 +46,52 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
         cardLayout.next(cardPanel);
     }
 
+    @Override
+    public void onIdentificadorSelected(AsignacionFinal asignacionFinal) {
+        agregarNuevaSubLista(asignacionFinal);
+        // Cambiar a la tarjeta del panel de mostrar botones después de agregar una nueva sublista
+        cardLayout.show(cardPanel, "panel3");
+    }
 
-    private void agregarNuevaSubLista(String nuevoIdentificador) {
-        boolean existeIdentificador = existeIdentificador(nuevoIdentificador);
+
+
+    private void agregarNuevaSubLista(AsignacionFinal asignacionFinal) {
+        TipoBus tipoBus = asignacionFinal.getTipoBus();
+        
+        boolean existeIdentificador = existeIdentificador(asignacionFinal.toString());
 
         if (!existeIdentificador) {
             ArrayList<Object> nuevaSubLista = new ArrayList<>();
-            nuevaSubLista.add(nuevoIdentificador);
+            nuevaSubLista.add(asignacionFinal.toString());
 
-            Asientos boton1 = new Asientos("Botón 1");
-            Asientos boton2 = new Asientos("Botón 2");
-            nuevaSubLista.add(boton1);
-            nuevaSubLista.add(boton2);
+            if(tipoBus == TipoBus.UNO_PISO){
+                for (int i = 1;i<=40;i=i+1){
+                    Asientos boton1 = new Asientos("Asiento "+i);
+                    nuevaSubLista.add(boton1);
+                }
+            } else{
+                for (int i = 1;i<=80;i=i+1){
+                    Asientos boton1 = new Asientos("Asiento "+i);
+                    nuevaSubLista.add(boton1);
+                }
+            }
+
+
+
+
+//            Asientos boton2 = new Asientos("Botón 2");
+//
+//            nuevaSubLista.add(boton2);
 
             listaPrincipal.add(nuevaSubLista);
 
-            System.out.println("Nueva sub-lista creada con identificador " + nuevoIdentificador);
-            mostrarBotonesDeSubLista(nuevoIdentificador);
+            System.out.println("Nueva sub-lista creada con identificador " + asignacionFinal.toString());
+            mostrarBotonesDeSubLista(asignacionFinal.toString());
             cardLayout.next(cardPanel);
+
         } else {
-            System.out.println("Ya existe una sub-lista con el identificador " + nuevoIdentificador);
-            mostrarBotonesDeSubLista(nuevoIdentificador);
+            System.out.println("Ya existe una sub-lista con el identificador " + asignacionFinal.toString());
+            mostrarBotonesDeSubLista(asignacionFinal.toString());
             cardLayout.next(cardPanel);
         }
     }
@@ -89,12 +117,6 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
         return false;
     }
 
-    @Override
-    public void onIdentificadorSelected(String identificador) {
-        agregarNuevaSubLista(identificador);
-        // Cambiar a la tarjeta del panel de mostrar botones después de agregar una nueva sublista
-        cardLayout.show(cardPanel, "panel3");
-    }
 
 
 }

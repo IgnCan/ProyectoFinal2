@@ -39,10 +39,6 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         add(backButton);
     }
 
-//    public interface SubListCallback {
-//        void mostrarSubLista(String nuevoIdentificador);
-//    }
-
     public void mostrarBotones(ArrayList<Object> subLista) {
         this.removeAll();
 

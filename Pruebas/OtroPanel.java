@@ -20,7 +20,7 @@ public class OtroPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // Puedes obtener el identificador de alguna manera (puede ser un JTextField, por ejemplo)
                 String identificador = "IdentificadorDesdeOtroPanel";
-                identificadorCallback.onIdentificadorSelected(identificador);
+                //identificadorCallback.onIdentificadorSelected(identificador);
             }
         });
 

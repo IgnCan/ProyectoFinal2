@@ -1,5 +1,6 @@
 package Pruebas;
 
+import AsignacionDeHorarios.AsignacionFinal;
 import Paneles.IdentificadorCallback;
 
 import javax.swing.*;
@@ -87,8 +88,8 @@ public class MainFrame extends JFrame implements IdentificadorCallback {
     }
 
     @Override
-    public void onIdentificadorSelected(String identificador) {
-        agregarNuevaSubLista(identificador);
+    public void onIdentificadorSelected(AsignacionFinal asignacionFinal) {
+        agregarNuevaSubLista(asignacionFinal.toString());
         // Cambiar a la tarjeta del panel de mostrar botones después de agregar una nueva sublista
         cardLayout.show(cardPanel, "NuevaSubLista");
     }
