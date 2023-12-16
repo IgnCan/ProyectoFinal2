@@ -72,9 +72,6 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
                     nuevaSubLista.add(boton1);
                 }
             }
-//            Asientos boton2 = new Asientos("Botón 2");
-//
-//            nuevaSubLista.add(boton2);
 
             listaPrincipal.add(nuevaSubLista);
 
