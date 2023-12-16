@@ -9,11 +9,11 @@ import java.awt.event.ActionListener;
 
 public class PanelRecorrido extends JPanel implements PanelChangeListener {
 
-    private Panel1ClickListener clickListener;
+    private APpanel2 clickListener;
     private Recorrido rec;
     CardLayout cardLayout;
     JPanel cardPanel;
-    public PanelRecorrido(CardLayout cardLayout, JPanel cardPanel, Panel1ClickListener clickListener){
+    public PanelRecorrido(CardLayout cardLayout, JPanel cardPanel, APpanel2 clickListener){
         this.clickListener=clickListener;
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
@@ -45,7 +45,6 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
 
     @Override
     public void retroPanel() {
-
     }
 
     /**

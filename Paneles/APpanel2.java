@@ -2,6 +2,6 @@ package Paneles;
 
 import Enums.Recorrido;
 
-public interface Panel1ClickListener {
+public interface APpanel2 {
     void pasarPanelHorario(Recorrido rec);
 }

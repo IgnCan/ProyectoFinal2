@@ -1,5 +1,5 @@
 import Enums.Recorrido;
-import Paneles.Panel1ClickListener;
+import Paneles.APpanel2;
 import Paneles.PanelCompra;
 import Paneles.PanelHorario;
 import Paneles.PanelRecorrido;
@@ -7,7 +7,7 @@ import Paneles.PanelRecorrido;
 import javax.swing.*;
 import java.awt.*;
 
-public class Frame  extends JFrame implements Panel1ClickListener {
+public class Frame  extends JFrame implements APpanel2 {
 
     CardLayout cardLayout = new CardLayout();
     JPanel cardPanel = new JPanel(cardLayout);

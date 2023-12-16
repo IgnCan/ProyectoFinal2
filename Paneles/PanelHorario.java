@@ -69,6 +69,26 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
             });
             this.add(boton);
         }
+
+        JButton nextButton = new JButton("Siguiente");
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                avanPanel();
+            }
+        });
+
+        add(new JLabel("Contenido del panel"));
+        add(nextButton);
+
+        JButton backButton = new JButton("atras");
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                retroPanel();
+            }
+        });
+        add(backButton);
 //        // Cambiar al segundo panel
 //        this.show(mainPanel, "Panel2");
 
