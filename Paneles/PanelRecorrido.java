@@ -30,7 +30,7 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
                     // Impresion De prueba
                     System.out.println(reco.getRecorrido());
                     rec=reco;
-                    clickListener.onButtonClicked(rec);
+                    clickListener.pasarPanelHorario(rec);
                     //avanPanel();
                 }
             });

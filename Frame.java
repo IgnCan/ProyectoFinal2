@@ -35,7 +35,7 @@ public class Frame  extends JFrame implements Panel1ClickListener {
         this.setVisible(true);
     }
 
-    public void onButtonClicked(Recorrido rec) {
+    public void pasarPanelHorario(Recorrido rec) {
         panelHorario.mostrarPanelHorario(rec);
         cardLayout.next(cardPanel);
     }
