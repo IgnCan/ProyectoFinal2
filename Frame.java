@@ -1,3 +1,5 @@
+import Enums.Recorrido;
+import Paneles.Panel1ClickListener;
 import Paneles.PanelCompra;
 import Paneles.PanelHorario;
 import Paneles.PanelRecorrido;
@@ -5,12 +7,12 @@ import Paneles.PanelRecorrido;
 import javax.swing.*;
 import java.awt.*;
 
-public class Frame  extends JFrame {
+public class Frame  extends JFrame implements Panel1ClickListener {
 
     CardLayout cardLayout = new CardLayout();
     JPanel cardPanel = new JPanel(cardLayout);
 
-    PanelRecorrido panelRecorrido = new PanelRecorrido(cardLayout,cardPanel);
+    PanelRecorrido panelRecorrido = new PanelRecorrido(cardLayout,cardPanel,this);
     PanelHorario panelHorario = new PanelHorario(cardLayout,cardPanel);
     PanelCompra panelCompra = new PanelCompra(cardLayout,cardPanel);
 
@@ -31,6 +33,11 @@ public class Frame  extends JFrame {
 
         this.add(cardPanel, BorderLayout.CENTER);
         this.setVisible(true);
+    }
+
+    public void onButtonClicked(Recorrido rec) {
+        panelHorario.mostrarPanelHorario(rec);
+        cardLayout.next(cardPanel);
     }
 
 

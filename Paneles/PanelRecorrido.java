@@ -8,10 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PanelRecorrido extends JPanel implements PanelChangeListener {
+
+    private Panel1ClickListener clickListener;
     private Recorrido rec;
     CardLayout cardLayout;
     JPanel cardPanel;
-    public PanelRecorrido(CardLayout cardLayout, JPanel cardPanel){
+    public PanelRecorrido(CardLayout cardLayout, JPanel cardPanel, Panel1ClickListener clickListener){
+        this.clickListener=clickListener;
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
         this.setBackground(Color.RED);
@@ -27,7 +30,8 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
                     // Impresion De prueba
                     System.out.println(reco.getRecorrido());
                     rec=reco;
-                    avanPanel();
+                    clickListener.onButtonClicked(rec);
+                    //avanPanel();
                 }
             });
             this.add(button);
@@ -43,4 +47,17 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
     public void retroPanel() {
 
     }
+
+    /**
+     * getter de rec
+     * @return Recorrido rec
+     */
+    public Recorrido getRec() {
+        return rec;
+    }
+
+//    @Override
+//    public void onButtonClicked(Recorrido rec) {
+//
+//    }
 }
