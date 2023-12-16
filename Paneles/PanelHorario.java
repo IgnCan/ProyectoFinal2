@@ -3,6 +3,7 @@ package Paneles;
 import AsignacionDeHorarios.AsignacionFinal;
 import AsignacionDeHorarios.Asignaciones;
 import Enums.Recorrido;
+import Pruebas.IdentificadorCallback;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,16 +12,17 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public class PanelHorario extends JPanel implements PanelChangeListener {
+
+    private IdentificadorCallback identificadorCallback;
+
     CardLayout cardLayout;
     JPanel cardPanel;
     public Asignaciones asignaciones = new Asignaciones();
-
-    //List<AsignacionFinal> asignacionesRecorrido1;
-    List<AsignacionFinal> asignacionesRecorrido1;// = asignaciones.obtenerAAsignacionFinal(Recorrido.RECORRIDO5);
-
+    List<AsignacionFinal> asignacionesRecorrido1;
     AsignacionFinal asignacionFinal;
 
-    public PanelHorario(CardLayout cardLayout, JPanel cardPanel){
+    public PanelHorario(CardLayout cardLayout, JPanel cardPanel, IdentificadorCallback callback){
+        this.identificadorCallback =callback;
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
         this.setBackground(Color.PINK);
@@ -31,7 +33,7 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
 
         this.removeAll();
         this.setLayout(new GridLayout(0, 1));
-        asignacionesRecorrido1=asignaciones.obtenerAAsignacionFinal(rec);
+        this.asignacionesRecorrido1=asignaciones.obtenerAAsignacionFinal(rec);
         for (AsignacionFinal asignacion : asignacionesRecorrido1) {
             JButton boton = new JButton(asignacion.toString());
 
@@ -44,7 +46,8 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
                 public void actionPerformed(ActionEvent e) {
                     System.out.println(asignacion.toString());
                     asignacionFinal=asignacion;
-
+                    asignacionFinal.getTipoAsiento().getPresio();
+                    identificadorCallback.onIdentificadorSelected(asignacionFinal.toString());
                 }
             });
             this.add(boton);

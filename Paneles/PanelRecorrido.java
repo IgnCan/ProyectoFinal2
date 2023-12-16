@@ -21,6 +21,7 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
         this.add(new JLabel("Seleccion de Recorrido"));
 
         Recorrido[] recorridos = Recorrido.values();
+
         this.setLayout(new GridLayout(0, 1));
         for (Recorrido reco : recorridos) {
             JButton button = new JButton(reco.getRecorrido());
@@ -54,9 +55,4 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
     public Recorrido getRec() {
         return rec;
     }
-
-//    @Override
-//    public void onButtonClicked(Recorrido rec) {
-//
-//    }
 }
