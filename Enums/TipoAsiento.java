@@ -8,7 +8,7 @@ package Enums;
 public enum TipoAsiento {
     SEMI_CAMA("Semi-cama",500),
     NORMAL("Normal",200),
-    EJECUTIVO("Pudiente",1000);
+    EJECUTIVO("Ejecutivo",1000);
 
     private String nombre;
     private int presio;

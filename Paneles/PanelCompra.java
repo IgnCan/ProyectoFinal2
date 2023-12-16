@@ -39,7 +39,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         add(backButton);
     }
 
-    public void mostrarBotones(ArrayList<Object> subLista) {
+    public void mostrarBotones(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         this.removeAll();
 
         String identificador = (String) subLista.get(0);
@@ -77,7 +77,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         add(backButton);
 
 
-        add(new Reservador(subLista));
+        add(new Reservador(subLista, asignacionFinal));
         revalidate();
         repaint();
     }
@@ -85,33 +85,27 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
     /**
      * Este boton finaliza la reserva de los pasajes
      */
+
     public class Reservador extends JButton{
-        public Reservador(ArrayList<Object> subLista){
+        public Reservador(ArrayList<Object> subLista, AsignacionFinal asignacionFinal){
             setText("Reservar");
+            int precioPorBoleto = asignacionFinal.getTipoBus().getPresio()+asignacionFinal.getTipoBus().getPresio()+asignacionFinal.getTipoAsiento().getPresio();
             addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-
+                    int precioTotal=0;
                     for (Object elemento : subLista) {
                         if(elemento instanceof Asientos){
                             Asientos bot = (Asientos) elemento;
                             if (bot.getBackground() == Color.GREEN) {
                                 bot.Desactivacion();
-                                //NO BORRAR HASTA PRUEBA EN CARDLAYOUT
-                                //bot.setEnabled(false);
-                                //bot.setBackground(Color.RED);
-                                //PrecioTotal=PrecioTotal+precioPorBoleto;
-                                //System.out.println(PrecioTotal);
+                                precioTotal=precioTotal+precioPorBoleto;
                             }
                         }else if(elemento instanceof String){
                             System.out.println(elemento);
                         }
                     }
-//                    vent.recibirLista(asientos);
-//
-//                    System.out.println(listaPrincipal().get(0).get(0) + "dfhsjadgh");
-                    //System.out.println("El precio total de la compra es: " + PrecioTotal);
-                    //PrecioTotal=0;
+                    System.out.println("El precio total de la compra es: $" + precioTotal);
                 }
             });
 

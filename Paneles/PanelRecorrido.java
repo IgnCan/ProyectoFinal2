@@ -11,8 +11,8 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
 
     private APpanel2 clickListener;
     private Recorrido rec;
-    CardLayout cardLayout;
-    JPanel cardPanel;
+    private CardLayout cardLayout;
+    private JPanel cardPanel;
     public PanelRecorrido(CardLayout cardLayout, JPanel cardPanel, APpanel2 clickListener){
         this.clickListener=clickListener;
         this.cardPanel=cardPanel;

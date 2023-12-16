@@ -45,15 +45,12 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
         panelHorario.mostrarPanelHorario(rec);
         cardLayout.next(cardPanel);
     }
-
     @Override
     public void onIdentificadorSelected(AsignacionFinal asignacionFinal) {
         agregarNuevaSubLista(asignacionFinal);
         // Cambiar a la tarjeta del panel de mostrar botones después de agregar una nueva sublista
         cardLayout.show(cardPanel, "panel3");
     }
-
-
 
     private void agregarNuevaSubLista(AsignacionFinal asignacionFinal) {
         TipoBus tipoBus = asignacionFinal.getTipoBus();
@@ -69,16 +66,12 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
                     Asientos boton1 = new Asientos("Asiento "+i);
                     nuevaSubLista.add(boton1);
                 }
-            } else{
+            } else if (tipoBus == TipoBus.DOS_PISOS) {
                 for (int i = 1;i<=80;i=i+1){
                     Asientos boton1 = new Asientos("Asiento "+i);
                     nuevaSubLista.add(boton1);
                 }
             }
-
-
-
-
 //            Asientos boton2 = new Asientos("Botón 2");
 //
 //            nuevaSubLista.add(boton2);
@@ -86,21 +79,21 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
             listaPrincipal.add(nuevaSubLista);
 
             System.out.println("Nueva sub-lista creada con identificador " + asignacionFinal.toString());
-            mostrarBotonesDeSubLista(asignacionFinal.toString());
+            mostrarBotonesDeSubLista(asignacionFinal.toString(), asignacionFinal);
             cardLayout.next(cardPanel);
 
         } else {
             System.out.println("Ya existe una sub-lista con el identificador " + asignacionFinal.toString());
-            mostrarBotonesDeSubLista(asignacionFinal.toString());
+            mostrarBotonesDeSubLista(asignacionFinal.toString(), asignacionFinal);
             cardLayout.next(cardPanel);
         }
     }
 
-    private boolean mostrarBotonesDeSubLista(String identificador) {
+    private boolean mostrarBotonesDeSubLista(String identificador, AsignacionFinal asignacionFinal) {
         for (ArrayList<Object> subLista : listaPrincipal) {
             String subListaIdentificador = (String) subLista.get(0);
             if (subListaIdentificador.equals(identificador)) {
-                panelCompra.mostrarBotones(subLista);
+                panelCompra.mostrarBotones(subLista, asignacionFinal);
                 return true;
             }
         }
