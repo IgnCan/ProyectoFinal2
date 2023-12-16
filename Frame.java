@@ -1,7 +1,7 @@
+import Botones.Asientos;
 import Enums.Recorrido;
 import Paneles.*;
-import Pruebas.IdentificadorCallback;
-import Pruebas.SubListPanel;
+import Paneles.IdentificadorCallback;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +15,7 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
 
     PanelRecorrido panelRecorrido = new PanelRecorrido(cardLayout,cardPanel,this);
     PanelHorario panelHorario = new PanelHorario(cardLayout,cardPanel, this );
-    Paneles.PanelCompra panelCompra = new Paneles.PanelCompra(cardLayout,cardPanel, this.listaPrincipal);
+    Paneles.PanelCompra panelCompra = new Paneles.PanelCompra(cardLayout,cardPanel);
 
     public Frame(){
 
@@ -51,8 +51,8 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
             ArrayList<Object> nuevaSubLista = new ArrayList<>();
             nuevaSubLista.add(nuevoIdentificador);
 
-            JButton boton1 = new JButton("Botón 1");
-            JButton boton2 = new JButton("Botón 2");
+            Asientos boton1 = new Asientos("Botón 1");
+            Asientos boton2 = new Asientos("Botón 2");
             nuevaSubLista.add(boton1);
             nuevaSubLista.add(boton2);
 

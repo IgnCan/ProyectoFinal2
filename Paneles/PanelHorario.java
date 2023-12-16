@@ -3,7 +3,6 @@ package Paneles;
 import AsignacionDeHorarios.AsignacionFinal;
 import AsignacionDeHorarios.Asignaciones;
 import Enums.Recorrido;
-import Pruebas.IdentificadorCallback;
 
 import javax.swing.*;
 import java.awt.*;

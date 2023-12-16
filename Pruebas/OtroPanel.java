@@ -1,9 +1,9 @@
 package Pruebas;
 
-import javax.swing.*;
-import java.awt.*;
+import Paneles.IdentificadorCallback;
 
 import javax.swing.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

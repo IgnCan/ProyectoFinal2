@@ -1,6 +1,7 @@
 package Paneles;
 
 import AsignacionDeHorarios.AsignacionFinal;
+import Botones.Asientos;
 import Enums.Recorrido;
 
 import javax.swing.*;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 public class PanelCompra extends JPanel implements PanelChangeListener{
     CardLayout cardLayout;
     JPanel cardPanel;
-    public PanelCompra(CardLayout cardLayout, JPanel cardPanel, ArrayList<ArrayList<Object>> listaPrincipal){
+    public PanelCompra(CardLayout cardLayout, JPanel cardPanel){
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
         this.setBackground(Color.GREEN);
@@ -38,9 +39,9 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         add(backButton);
     }
 
-    public interface SubListCallback {
-        void mostrarSubLista(String nuevoIdentificador);
-    }
+//    public interface SubListCallback {
+//        void mostrarSubLista(String nuevoIdentificador);
+//    }
 
     public void mostrarBotones(ArrayList<Object> subLista) {
         this.removeAll();
@@ -51,8 +52,8 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         // Iterar sobre los elementos de la sublista y agregarlos al panel
         for (int i = 1; i < subLista.size(); i++) {
             Object elemento = subLista.get(i);
-            if (elemento instanceof JButton) {
-                JButton boton = (JButton) elemento;
+            if (elemento instanceof Asientos) {
+                Asientos boton = (Asientos) elemento;
                 add(boton);
             } else {
                 // Puedes agregar lógica para otros tipos de elementos aquí
