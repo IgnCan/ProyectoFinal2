@@ -27,26 +27,20 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
                     // Impresion De prueba
                     System.out.println(reco.getRecorrido());
                     rec=reco;
-                    cambiarPanel();
+                    avanPanel();
                 }
             });
             this.add(button);
         }
-
-//        JButton nextButton = new JButton("Siguiente");
-//        nextButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                cambiarPanel();
-//            }
-//        });
-//
-//        add(new JLabel("Contenido del panel"));
-//        add(nextButton);
     }
 
     @Override
-    public void cambiarPanel() {
+    public void avanPanel() {
         cardLayout.next(cardPanel);
+    }
+
+    @Override
+    public void retroPanel() {
+
     }
 }

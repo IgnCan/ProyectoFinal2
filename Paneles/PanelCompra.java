@@ -17,15 +17,27 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cambiarPanel();
+                avanPanel();
             }
         });
 
         add(new JLabel("Contenido del panel"));
         add(nextButton);
+
+        JButton backButton = new JButton("atras");
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                retroPanel();
+            }
+        });
+        add(backButton);
     }
     @Override
-    public void cambiarPanel() {
+    public void avanPanel() {
         cardLayout.next(cardPanel);
+    }
+    public void retroPanel() {
+        cardLayout.previous(cardPanel);
     }
 }

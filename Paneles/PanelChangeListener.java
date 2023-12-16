@@ -1,5 +1,6 @@
 package Paneles;
 
 public interface PanelChangeListener {
-    void cambiarPanel();
+    void avanPanel();
+    void retroPanel();
 }
