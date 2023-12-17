@@ -41,20 +41,39 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
 
     public void mostrarBotones(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         this.removeAll();
-
+        JPanel p=new JPanel();
+        if("Un piso"==subLista.get(0).toString() ){
+            p.setLayout(new GridLayout(10, 5, 10, 10));
+            int c=0;
+            if(c<=40) {
+                for (int i = 1; i <= 10; i++) {
+                    for (int j = 1; j <= 2; j++) {
+                        c = c + 1;
+                        Object elemento = subLista.get(c);
+                        if (elemento instanceof Asientos) {
+                            Asientos boton = (Asientos) elemento;
+                            p.add(boton);
+                        }
+                        ;
+                    }
+                    for (int j = 3; j <= 3; j++) {
+                        JLabel M = new JLabel("");
+                        p.add(M);
+                    }
+                    for (int j = 4; j <= 5; j++) {
+                        c = c +1;
+                        Object elemento = subLista.get(c);
+                        if (elemento instanceof Asientos) {
+                            Asientos boton = (Asientos) elemento;
+                            p.add(boton);
+                        }
+                    }
+            }
+        }}
         String identificador = (String) subLista.get(0);
         add(new JLabel("Identificador: " + identificador));
 
-        // Iterar sobre los elementos de la sublista y agregarlos al panel
-        for (int i = 1; i < subLista.size(); i++) {
-            Object elemento = subLista.get(i);
-            if (elemento instanceof Asientos) {
-                Asientos boton = (Asientos) elemento;
-                add(boton);
-            } else {
-                // Puedes agregar lógica para otros tipos de elementos aquí
-            }
-        }
+        add(p);
 
         JButton nextButton = new JButton("Siguiente");
         nextButton.addActionListener(new ActionListener() {
