@@ -10,6 +10,11 @@ public class Asientos extends JButton {
      * si es 1 desactiva el boton y lo deja en rojo
      */
     int apagado=0;
+
+    /**
+     * Método constructor, crea Jbuttons de color blanco que son modificados en el color al ser seleccionados.
+     * @param text
+     */
     public Asientos(String text) {
         super(text);
         setBackground(Color.WHITE);
