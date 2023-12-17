@@ -78,6 +78,7 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
 
             listaPrincipal.add(nuevaSubLista);
 
+
             System.out.println("Nueva sub-lista creada con identificador " + asignacionFinal.toString());
             mostrarBotonesDeSubLista(asignacionFinal.toString(), asignacionFinal);
             cardLayout.next(cardPanel);
