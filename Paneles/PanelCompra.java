@@ -20,7 +20,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
     public PanelCompra(CardLayout cardLayout, JPanel cardPanel){
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
-        this.setBackground(Color.GREEN);
+        //this.setBackground(ImageIcon());
 
 
         JButton nextButton = new JButton("Siguiente");
@@ -50,11 +50,8 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         if (Objects.equals(asignacionFinal.getTipoBus().toString(), "UNO_PISO")) {
 
             p.setLayout(new BorderLayout());
-
-            ImageIcon backgroundImage = new ImageIcon("C:\\Users\\snmar\\OneDrive\\Documentos\\GitHub\\ProyectoFinal2\\Paneles\\nombre_de_tu_imagen.jpg") {
-            };
-
-            p.setLayout(new GridLayout(10, 4, 10, 10));
+            p.setOpaque(false);
+            p.setLayout(new GridLayout(10, 4, 2, 10));
             int c=0;
             for (int i = 1; i <= 10; i++) {
                 for (int j = 1; j <= 2; j++) {
@@ -82,7 +79,9 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
             } else if (Objects.equals(asignacionFinal.getTipoBus().toString(), "DOS_PISOS")){
             JPanel cc=new JPanel();
             JPanel q=new JPanel();
-            cc.setLayout(new GridLayout(10, 4, 10, 10));
+            cc.setOpaque(false);
+            q.setOpaque(false);
+            cc.setLayout(new GridLayout(10, 4, 2, 10));
             int c=0;
             for (int i = 1; i <= 10; i++) {
                 for (int j = 1; j <= 2; j++) {
@@ -107,7 +106,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
                     }
                 }
             }
-            q.setLayout(new GridLayout(10, 5, 10, 10));
+            q.setLayout(new GridLayout(10, 5, 2, 10));
             int a = 40;
             for (int b = 1; b <= 10; b++) {
                 for (int j = 1; j <= 2; j++) {
@@ -131,6 +130,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
                         q.add(boton);
                     }
                 }
+
                 p.add(cc);
                 p.add(q);
 
@@ -188,11 +188,13 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
                                         bot.Desactivacion();
                                         precioTotal = precioTotal + precioPorBoleto;
                                     }
+
                                 } else if (elemento instanceof String) {
                                     System.out.println(elemento);
                                 }
+                                System.out.println("El precio total de la compra es: $" + precioTotal);
                             }
-                            System.out.println("El precio total de la compra es: $" + precioTotal);
+
                         }
                     });
 
