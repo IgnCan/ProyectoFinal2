@@ -46,9 +46,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
     public void mostrarBotones(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         this.removeAll();
         JPanel p=new JPanel();
-        System.out.print(asignacionFinal.getTipoBus().toString());
         if (Objects.equals(asignacionFinal.getTipoBus().toString(), "UNO_PISO")) {
-
             p.setLayout(new BorderLayout());
             p.setOpaque(false);
             p.setLayout(new GridLayout(10, 4, 2, 10));
