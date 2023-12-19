@@ -21,27 +21,6 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
         //this.setBackground(ImageIcon());
-
-
-        JButton nextButton = new JButton("Siguiente");
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                avanPanel();
-            }
-        });
-
-        add(new JLabel("Contenido del panel"));
-        add(nextButton);
-
-        JButton backButton = new JButton("atras");
-        backButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                retroPanel();
-            }
-        });
-        add(backButton);
     }
     public void mostrarBotones(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         this.removeAll();
@@ -140,17 +119,6 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
 
         add(p);
 
-        JButton nextButton = new JButton("Siguiente");
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                avanPanel();
-            }
-        });
-
-        add(new JLabel("Contenido del panel"));
-        add(nextButton);
-
         JButton backButton = new JButton("atras");
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -160,51 +128,52 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         });
         add(backButton);
 
-
         add(new Reservador(subLista, asignacionFinal));
+
         revalidate();
         repaint();
     }
 
 
-            /**
-             * Este boton finaliza la reserva de los pasajes
-             */
+    /**
+     * Este boton finaliza la reserva de los pasajes
+     */
 
-            public class Reservador extends JButton {
-                public Reservador(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
-                    setText("Reservar");
-                    int precioPorBoleto = asignacionFinal.getTipoBus().getPresio() + asignacionFinal.getTipoBus().getPresio() + asignacionFinal.getTipoAsiento().getPresio();
-                    addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            int precioTotal = 0;
-                            for (Object elemento : subLista) {
-                                if (elemento instanceof Asientos) {
-                                    Asientos bot = (Asientos) elemento;
-                                    if (bot.getBackground() == Color.GREEN) {
-                                        bot.Desactivacion();
-                                        precioTotal = precioTotal + precioPorBoleto;
-                                    }
-
-                                } else if (elemento instanceof String) {
-                                    System.out.println(elemento);
-                                }
-                                System.out.println("El precio total de la compra es: $" + precioTotal);
+    public class Reservador extends JButton {
+        public Reservador(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
+            setText("Reservar");
+            int precioPorBoleto = asignacionFinal.getRecorrido().getPresio() + asignacionFinal.getTipoBus().getPresio() + asignacionFinal.getTipoAsiento().getPresio();
+            addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int precioTotal = 0;
+                    for (Object elemento : subLista) {
+                        if (elemento instanceof Asientos) {
+                            Asientos bot = (Asientos) elemento;
+                            if (bot.getBackground() == Color.GREEN) {
+                                bot.Desactivacion();
+                                precioTotal = precioTotal + precioPorBoleto;
                             }
 
+                        } else if (elemento instanceof String) {
+                            System.out.println(elemento);
                         }
-                    });
+
+                    }
+                    System.out.println("El precio total de la compra es: $" + precioTotal);
 
                 }
-            }
-
-            @Override
-            public void avanPanel () {
-                cardLayout.next(cardPanel);
-            }
-            public void retroPanel () {
-                cardLayout.previous(cardPanel);
-            }
+            });
 
         }
+    }
+
+    @Override
+    public void avanPanel () {
+        cardLayout.next(cardPanel);
+    }
+    public void retroPanel () {
+        cardLayout.previous(cardPanel);
+    }
+
+}

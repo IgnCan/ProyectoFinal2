@@ -12,6 +12,8 @@ public class AsignacionFinal {
     private Horario horario;
     private TipoAsiento tipoAsiento;
     private TipoBus tipoBus;
+
+    private Recorrido recorrido;
     private int presioTotal;
 
     /**
@@ -25,6 +27,7 @@ public class AsignacionFinal {
         this.horario = horario;
         this.tipoAsiento = tipoAsiento;
         this.tipoBus = tipoBus;
+        this.recorrido= recorrido;
         this.presioTotal = tipoAsiento.getPresio()+tipoBus.getPresio()+recorrido.getPresio();
     }
 
@@ -50,6 +53,10 @@ public class AsignacionFinal {
      */
     public TipoBus getTipoBus() {
         return tipoBus;
+    }
+
+    public Recorrido getRecorrido(){
+        return recorrido;
     }
 
     /**

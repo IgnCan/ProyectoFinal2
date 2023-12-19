@@ -13,7 +13,6 @@ import java.util.List;
 public class PanelHorario extends JPanel implements PanelChangeListener {
 
     private IdentificadorCallback identificadorCallback;
-
     CardLayout cardLayout;
     JPanel cardPanel;
     public Asignaciones asignaciones = new Asignaciones();
@@ -52,16 +51,7 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
             this.add(boton);
         }
 
-        JButton nextButton = new JButton("Siguiente");
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                avanPanel();
-            }
-        });
-
         add(new JLabel("Contenido del panel"));
-        add(nextButton);
 
         JButton backButton = new JButton("atras");
         backButton.addActionListener(new ActionListener() {
