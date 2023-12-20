@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * crea un Jpanel con los botones para seleccionr el recorrido.
+ * Crea un Jpanel con los botones para seleccionr el recorrido.
  */
 public class PanelRecorrido extends JPanel implements PanelChangeListener {
 
@@ -18,8 +18,7 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
     private JPanel cardPanel;
 
     private Image imagenFondo;
-
-    String rutaImagen = "Visuales/OIG.jpg";
+    private String rutaImagen = "Visuales/OIG.jpg";
 
     /**
      * Crea los botones con los recorridos y los agrega al JPanel.
