@@ -3,6 +3,7 @@ package Paneles;
 import AsignacionDeHorarios.AsignacionFinal;
 import Botones.Asientos;
 import Botones.Reservador;
+import Interfaces.PanelChangeListener;
 
 import javax.swing.*;
 import java.awt.*;

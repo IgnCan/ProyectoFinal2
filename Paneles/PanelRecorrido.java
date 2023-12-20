@@ -1,6 +1,8 @@
 package Paneles;
 
 import Enums.Recorrido;
+import Interfaces.APpanel2;
+import Interfaces.PanelChangeListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,34 +33,23 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
         this.imagenFondo = new ImageIcon(rutaImagen).getImage();
-        //setBackground(Color.RED);
-
 
         Recorrido[] recorridos = Recorrido.values();
-
         setLayout(new GridLayout(0, 1));
-
-//        GridBagConstraints gbc = new GridBagConstraints();
-//        gbc.gridx = 0;
-//        gbc.gridy = 0;
-//        gbc.anchor = GridBagConstraints.CENTER;
 
         JLabel seleccion = new JLabel("Seleccion de Recorrido:");
 
         Color fondoTransparente = new Color(255, 255, 255, 150); // R, G, B, Alfa
         seleccion.setBackground(fondoTransparente);
-
-        // Configuración adicional del JLabel
-        seleccion.setOpaque(true); // Asegurar que el JLabel sea opaco para mostrar el color de fondo
+        seleccion.setOpaque(true);
         seleccion.setForeground(Color.BLACK);
-        //seleccion.setAlignmentX(Component.CENTER_ALIGNMENT);
+
         add(seleccion);
 
         for (Recorrido reco : recorridos) {
             JButton button = new JButton(reco.getRecorrido());
 
             // Configurar la transparencia del color de fondo
-            //Color fondoTransparente = new Color(255, 255, 255, 150); // R, G, B, Alfa
             button.setBackground(fondoTransparente);
             button.setRolloverEnabled(false);
             button.setForeground(Color.BLACK);
@@ -96,6 +87,7 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
      * getter de rec.
      * @return  Recorrido rec
      */
+
     public Recorrido getRec() {
         return rec;
     }

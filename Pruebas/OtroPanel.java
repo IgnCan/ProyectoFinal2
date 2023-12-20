@@ -1,6 +1,6 @@
 package Pruebas;
 
-import Paneles.APpanel3;
+import Interfaces.APpanel3;
 
 import javax.swing.*;
 

@@ -15,7 +15,8 @@ import java.util.ArrayList;
 
 public class Reservador extends JButton {
     /**
-     *
+     * Constructor del Reservador, al presionarlo genera una pantalla emergente que pide la confirmacion de paga (ya que es del punto de vista de un vendedor) de
+     * recibir la paga confirma la compra y desactiva los botones en verde, de no confirmar la compra cierrra la ventana emergente, cancelando la reserva.
      * @param subLista  Arraylist con los botones seleccionados
      * @param asignacionFinal Arraylist con los recorridos disponibles y sus respectivos datos
      */

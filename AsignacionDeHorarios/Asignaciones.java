@@ -40,6 +40,7 @@ public class Asignaciones {
         asing.AsingnacionFinal(Recorrido.RECORRIDO4, Horario.HORARIO_2, TipoAsiento.SEMI_CAMA, TipoBus.UNO_PISO);
         // Asignacion a RECORRIDO5
         asing.AsingnacionFinal(Recorrido.RECORRIDO5, Horario.HORARIO_1, TipoAsiento.SEMI_CAMA, TipoBus.UNO_PISO);
+
         asing.AsingnacionFinal(Recorrido.RECORRIDO5, Horario.HORARIO_2, TipoAsiento.NORMAL, TipoBus.DOS_PISOS);
         asing.AsingnacionFinal(Recorrido.RECORRIDO5, Horario.HORARIO_3, TipoAsiento.EJECUTIVO, TipoBus.UNO_PISO);
         asing.AsingnacionFinal(Recorrido.RECORRIDO5, Horario.HORARIO_1, TipoAsiento.NORMAL, TipoBus.UNO_PISO);

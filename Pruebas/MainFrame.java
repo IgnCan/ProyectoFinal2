@@ -1,7 +1,7 @@
 package Pruebas;
 
 import AsignacionDeHorarios.AsignacionFinal;
-import Paneles.APpanel3;
+import Interfaces.APpanel3;
 
 import javax.swing.*;
 import java.awt.*;

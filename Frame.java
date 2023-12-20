@@ -2,8 +2,9 @@ import AsignacionDeHorarios.AsignacionFinal;
 import Botones.Asientos;
 import Enums.Recorrido;
 import Enums.TipoBus;
+import Interfaces.APpanel2;
 import Paneles.*;
-import Paneles.APpanel3;
+import Interfaces.APpanel3;
 
 import javax.swing.*;
 import java.awt.*;

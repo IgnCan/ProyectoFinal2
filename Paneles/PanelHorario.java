@@ -3,6 +3,8 @@ package Paneles;
 import AsignacionDeHorarios.AsignacionFinal;
 import AsignacionDeHorarios.Asignaciones;
 import Enums.Recorrido;
+import Interfaces.APpanel3;
+import Interfaces.PanelChangeListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,15 +17,14 @@ import java.util.List;
  */
 public class PanelHorario extends JPanel implements PanelChangeListener {
 
-    private APpanel3 APpanel3;
-    CardLayout cardLayout;
-    JPanel cardPanel;
-    public Asignaciones asignaciones = new Asignaciones();
-    List<AsignacionFinal> asignacionesRecorrido1;
+    private Interfaces.APpanel3 APpanel3;
+    private CardLayout cardLayout;
+    private JPanel cardPanel;
+    private Asignaciones asignaciones = new Asignaciones();
+    private List<AsignacionFinal> asignacionesRecorrido1;
     AsignacionFinal asignacionFinal;
 
     private Image imagenFondo;
-
     private String rutaImagen = "Visuales/OIG.jpg";
 
     /**
