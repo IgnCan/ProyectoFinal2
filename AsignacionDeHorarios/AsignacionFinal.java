@@ -58,6 +58,9 @@ public class AsignacionFinal {
     public Recorrido getRecorrido(){
         return recorrido;
     }
+    public int getPresioTotal(){
+        return presioTotal;
+    }
 
     /**
      * override de Método toString
