@@ -14,6 +14,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Crea 
+ */
 public class PanelCompra extends JPanel implements PanelChangeListener{
     CardLayout cardLayout;
     JPanel cardPanel;
