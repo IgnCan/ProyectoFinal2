@@ -36,9 +36,21 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
 
         Recorrido[] recorridos = Recorrido.values();
 
-        //setLayout(new GridLayout(0, 1));
+        setLayout(new GridLayout(0, 1));
+
+//        GridBagConstraints gbc = new GridBagConstraints();
+//        gbc.gridx = 0;
+//        gbc.gridy = 0;
+//        gbc.anchor = GridBagConstraints.CENTER;
 
         JLabel seleccion = new JLabel("Seleccion de Recorrido:");
+
+        Color fondoTransparente = new Color(255, 255, 255, 150); // R, G, B, Alfa
+        seleccion.setBackground(fondoTransparente);
+
+        // Configuración adicional del JLabel
+        seleccion.setOpaque(true); // Asegurar que el JLabel sea opaco para mostrar el color de fondo
+        seleccion.setForeground(Color.BLACK);
         //seleccion.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(seleccion);
 
@@ -46,7 +58,7 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
             JButton button = new JButton(reco.getRecorrido());
 
             // Configurar la transparencia del color de fondo
-            Color fondoTransparente = new Color(255, 255, 255, 150); // R, G, B, Alfa
+            //Color fondoTransparente = new Color(255, 255, 255, 150); // R, G, B, Alfa
             button.setBackground(fondoTransparente);
             button.setRolloverEnabled(false);
             button.setForeground(Color.BLACK);

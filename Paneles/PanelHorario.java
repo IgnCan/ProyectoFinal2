@@ -76,12 +76,19 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
             });
             this.add(boton);
         }
+        Color fondoTransparente = new Color(255, 255, 255, 150); // R, G, B, Alfa
 
-        add(new JLabel("Contenido del panel"));
+        JLabel jLhorario = new JLabel("Seleccione horario para recorrido : " + rec.getRecorrido());
+        jLhorario.setBackground(fondoTransparente);
+
+        // Configuración adicional del JLabel
+        jLhorario.setOpaque(true); // Asegurar que el JLabel sea opaco para mostrar el color de fondo
+        jLhorario.setForeground(Color.BLACK);
+        add(jLhorario);
 
         JButton backButton = new JButton("atras");
 
-        Color fondoTransparente = new Color(255, 255, 255, 150); // R, G, B, Alfa
+
         backButton.setBackground(fondoTransparente);
         backButton.setRolloverEnabled(false);
         backButton.setForeground(Color.BLACK);
