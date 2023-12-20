@@ -2,6 +2,7 @@
 GRUPO 10\
 Paula San Martín\
 Ignacio Candia
+![DiagramaDeCasosDeUso](https://github.com/IgnCan/ProyectoFinal/assets/147210706/52939436-fb52-412b-a601-f2bb7345ba94)
 ![TareaFinal](https://github.com/IgnCan/ProyectoFinal2/assets/147210706/49aae918-e190-4a11-b545-b3932eaafd54)
 
 #Deciciones Tomadas:
