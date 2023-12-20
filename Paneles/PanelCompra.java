@@ -11,6 +11,9 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Crea 
+ */
 public class PanelCompra extends JPanel implements PanelChangeListener{
     private CardLayout cardLayout;
     private JPanel cardPanel;
