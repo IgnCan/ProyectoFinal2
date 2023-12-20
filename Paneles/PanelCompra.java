@@ -143,6 +143,9 @@ public class PanelCompra extends JPanel implements PanelChangeListener {
                         q.add(boton);
                     }
                 }
+                cc.setBackground(new Color(0, 0, 0, 0));
+                q.setBackground(new Color(0, 0, 0, 0));
+                p.setBackground(new Color(0, 0, 0, 0));
 
                 p.add(cc);
                 p.add(q);
