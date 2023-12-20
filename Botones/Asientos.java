@@ -5,18 +5,19 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Extencion de JButton que se usara como los asientos del bus
+ */
+
 public class Asientos extends JButton {
+
     /**
-     * si es 1 desactiva el boton y lo deja en rojo
+     * Constructor, crea un boton que es de color blanco, al presionarlo se volverá verde y viceversa
+     * @param text es el String nombre del boton.
      */
-    int apagado=0;
     public Asientos(String text) {
         super(text);
         setBackground(Color.WHITE);
-        if (apagado==1){
-            setBackground(Color.RED);
-            setEnabled(false);
-        }
         addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -26,11 +27,9 @@ public class Asientos extends JButton {
     }
 
     /**
-     * Este metodo se encarga de desactivar el boton, y modificar el valor de apagado a 1, esto permite mantener
-     * el boton desactivado en compras multiples y guardar su estado al cambiar de bus, recorrido, etc.
+     * Este método se encarga de desactivar el botón, y volverlo de color rojo simulando que el asiento esta reservado.
      */
     public void Desactivacion(){
-        this.apagado=1;
         setEnabled(false);
         setBackground(Color.RED);
     }

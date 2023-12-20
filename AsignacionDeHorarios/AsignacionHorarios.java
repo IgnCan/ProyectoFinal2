@@ -8,29 +8,30 @@ import Enums.TipoBus;
 import java.util.*;
 
 /**
- * Clase AsignacionHorarios que crea un HashMap con los recorridos y sus respectivas caracteristicas
+ * Clase AsignacionHorarios que crea un HashMap con los recorridos y sus respectivas características.
  */
 public class AsignacionHorarios {
     private Map<Recorrido, List<AsignacionFinal>> asignaciones = new HashMap<>();
 
     /**
-     *Método público que agrega listas con las asignaciones de cada bus a una lista más grande que las va a contener
+     *Método público que agrega listas con las asignaciones de cada bus a una lista más grande que las va a contener.
      * @param recorrido
      * @param horario
      * @param tipoAsiento
      * @param tipoBus
+     * @param noRecorrido
      */
 
-    public void AsingnacionFinal(Recorrido recorrido, Horario horario, TipoAsiento tipoAsiento, TipoBus tipoBus) {
+    public void AsingnacionFinal(Recorrido recorrido, Horario horario, TipoAsiento tipoAsiento, TipoBus tipoBus, int noRecorrido) {
         List<AsignacionFinal> asignacionFinal = asignaciones.getOrDefault(recorrido, new ArrayList<>());
-        asignacionFinal.add(new AsignacionFinal(recorrido, horario, tipoAsiento, tipoBus));
+        asignacionFinal.add(new AsignacionFinal(recorrido, horario, tipoAsiento, tipoBus, noRecorrido ));
         asignaciones.put(recorrido, asignacionFinal);
     }
 
     /**
-     * Metodo público que retorna una lista con las sublistas con los datos del recorrido solicitdo
+     * Método público que retorna una lista con las sublistas con los datos del recorrido solicitado.
      * @param recorrido
-     * @return lista con sublistas de las caracteristicas del recorrido
+     * @return lista con sublistas de las características del recorrido.
      */
     public List<AsignacionFinal> obtenerAsignacionFinal(Recorrido recorrido) {
         return asignaciones.getOrDefault(recorrido, Collections.emptyList());
