@@ -22,7 +22,7 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
     Paneles.PanelCompra panelCompra = new Paneles.PanelCompra(cardLayout,cardPanel);
 
     /**
-     * Metodo constructor
+     * Metodo constructor, agrega paneles y modifica cualidades de JFrame.
      */
     public Frame(){
 
@@ -46,8 +46,8 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
     }
 
     /**
-     *
-     * @param rec
+     *Muestra panelHorario
+     * @param rec recorrido
      */
     public void pasarPanelHorario(Recorrido rec) {
         panelHorario.mostrarPanelHorario(rec);
@@ -66,8 +66,8 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
     }
 
     /**
-     *
-     * @param asignacionFinal
+     * Crea una nueva sublista dependiendo de si ya existe una asociada con el recorrido selecionado y agraga los botones de los asientos.
+     * @param asignacionFinal AsignacioGinal Arraylist con los datos del recorrido.
      */
     private void agregarNuevaSubLista(AsignacionFinal asignacionFinal) {
         TipoBus tipoBus = asignacionFinal.getTipoBus();
@@ -108,10 +108,10 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
     }
 
     /**
-     *
-     * @param identificador
-     * @param asignacionFinal
-     * @return
+     *llama a panelComrador y muestra los botones de los asientos.
+     * @param identificador String
+     * @param asignacionFinal AsignacioFinal
+     * @return boolean
      */
     private boolean mostrarBotonesDeSubLista(String identificador, AsignacionFinal asignacionFinal) {
         for (ArrayList<Object> subLista : listaPrincipal) {
@@ -126,8 +126,8 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
 
     /**
      *
-     * @param identificador String
-     * @return
+     * @param identificador String identificador del recorrido
+     * @return boolean
      */
     private boolean existeIdentificador(String identificador) {
         for (ArrayList<Object> subLista : listaPrincipal) {
