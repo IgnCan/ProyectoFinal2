@@ -24,7 +24,9 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
     }
     public void mostrarBotones(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         this.removeAll();
-        this.setLayout(new GridLayout(2,1));
+        this.setLayout(new GridLayout(3,1));
+
+
         JPanel p=new JPanel();
 
         if (Objects.equals(asignacionFinal.getTipoBus().toString(), "UNO_PISO")) {
@@ -119,7 +121,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
 
             }
         }
-        add(p);
+
         JPanel r=new JPanel();
 
         String identificador = (String) subLista.get(0);
@@ -136,7 +138,19 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         r.add(backButton);
 
         r.add(new Reservador(subLista, asignacionFinal));
-        add(r);
+
+        setLayout(new BorderLayout());
+
+        // Configurar un BoxLayout para el panel del sur
+        r.setLayout(new BoxLayout(r, BoxLayout.Y_AXIS));
+
+        // Configurar el tamaño preferido para el panel del norte
+        p.setPreferredSize(new Dimension(getWidth(), getHeight() / 2));
+
+
+        add(p, BorderLayout.NORTH);
+        add(r, BorderLayout.SOUTH);
+
 
         revalidate();
         repaint();

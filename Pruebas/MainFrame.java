@@ -18,6 +18,7 @@ public class MainFrame extends JFrame implements IdentificadorCallback {
     public MainFrame() {
         listaPrincipal = new ArrayList<>();
 
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Agregar Sub-Lista");
         setSize(400, 300);
@@ -41,6 +42,7 @@ public class MainFrame extends JFrame implements IdentificadorCallback {
         add(cardPanel);
 
         setVisible(true);
+
     }
 
     private void agregarNuevaSubLista(String nuevoIdentificador) {
