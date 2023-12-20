@@ -21,9 +21,9 @@ public class AsignacionHorarios {
      * @param tipoBus
      */
 
-    public void AsingnacionFinal(Recorrido recorrido, Horario horario, TipoAsiento tipoAsiento, TipoBus tipoBus) {
+    public void AsingnacionFinal(Recorrido recorrido, Horario horario, TipoAsiento tipoAsiento, TipoBus tipoBus, int noRecorrido) {
         List<AsignacionFinal> asignacionFinal = asignaciones.getOrDefault(recorrido, new ArrayList<>());
-        asignacionFinal.add(new AsignacionFinal(recorrido, horario, tipoAsiento, tipoBus));
+        asignacionFinal.add(new AsignacionFinal(recorrido, horario, tipoAsiento, tipoBus, noRecorrido ));
         asignaciones.put(recorrido, asignacionFinal);
     }
 

@@ -12,8 +12,8 @@ public class AsignacionFinal {
     private Horario horario;
     private TipoAsiento tipoAsiento;
     private TipoBus tipoBus;
-
     private Recorrido recorrido;
+    private int noRecorrido;
     private int presioTotal;
 
     /**
@@ -22,12 +22,14 @@ public class AsignacionFinal {
      * @param horario
      * @param tipoAsiento
      * @param tipoBus
+     * @param noRecorrido
      */
-    public AsignacionFinal(Recorrido recorrido, Horario horario, TipoAsiento tipoAsiento, TipoBus tipoBus) {
+    public AsignacionFinal(Recorrido recorrido, Horario horario, TipoAsiento tipoAsiento, TipoBus tipoBus, int noRecorrido) {
         this.horario = horario;
         this.tipoAsiento = tipoAsiento;
         this.tipoBus = tipoBus;
         this.recorrido= recorrido;
+        this.noRecorrido=noRecorrido;
         this.presioTotal = tipoAsiento.getPresio()+tipoBus.getPresio()+recorrido.getPresio();
     }
 
@@ -63,11 +65,20 @@ public class AsignacionFinal {
     }
 
     /**
-     * override de Método toString.
+     * override de Método toString se usa para entregar un string identiicador para
      * @return String horario, tipo de asiento, tipo de bus y precio del pasaje
      */
     @Override
     public String toString() {
+        return "Horario: " + horario.getHora() + ", Tipo de Asiento: " + tipoAsiento.getNombre() + ", Tipo de Bus: " + tipoBus.getNombre() + "; Precio del pasaje: "+ presioTotal + noRecorrido;
+    }
+
+    /**
+     * Este metodo de
+     * @return
+     */
+
+    public String getDatosHorario() {
         return "Horario: " + horario.getHora() + ", Tipo de Asiento: " + tipoAsiento.getNombre() + ", Tipo de Bus: " + tipoBus.getNombre() + "; Precio del pasaje: "+ presioTotal;
     }
 }

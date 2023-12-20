@@ -54,7 +54,7 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
         this.imagenFondo = new ImageIcon(rutaImagen).getImage();
 
         for (AsignacionFinal asignacion : asignacionesRecorrido1) {
-            JButton boton = new JButton(asignacion.toString());
+            JButton boton = new JButton(asignacion.getDatosHorario());
 
             /**
              * Método para agregar acciones al presionar el jbutton de la hora
