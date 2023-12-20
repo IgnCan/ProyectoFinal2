@@ -3,15 +3,11 @@ package Paneles;
 import AsignacionDeHorarios.AsignacionFinal;
 import Botones.Asientos;
 import Botones.Reservador;
-import Enums.Recorrido;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
