@@ -24,6 +24,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
     }
     public void mostrarBotones(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         this.removeAll();
+        this.setLayout(new GridLayout(2,1));
         JPanel p=new JPanel();
 
         if (Objects.equals(asignacionFinal.getTipoBus().toString(), "UNO_PISO")) {
@@ -55,13 +56,13 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
                 }
             }
 
-        } else if (Objects.equals(asignacionFinal.getTipoBus().toString(), "DOS_PISOS")){
-            JPanel cc=new JPanel();
-            JPanel q=new JPanel();
+        } else if (Objects.equals(asignacionFinal.getTipoBus().toString(), "DOS_PISOS")) {
+            JPanel cc = new JPanel();
+            JPanel q = new JPanel();
             cc.setOpaque(false);
             q.setOpaque(false);
             cc.setLayout(new GridLayout(10, 4, 2, 10));
-            int c=0;
+            int c = 0;
 
             for (int i = 1; i <= 10; i++) {
                 for (int j = 1; j <= 2; j++) {
@@ -119,12 +120,11 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
             }
         }
         add(p);
+        JPanel r=new JPanel();
 
         String identificador = (String) subLista.get(0);
         JLabel datos = new JLabel("Identificador: " + identificador);
-        add(datos);
-
-
+        r.add(datos);
 
         JButton backButton = new JButton("atras");
         backButton.addActionListener(new ActionListener() {
@@ -133,9 +133,10 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
                 retroPanel();
             }
         });
-        add(backButton);
+        r.add(backButton);
 
-        add(new Reservador(subLista, asignacionFinal));
+        r.add(new Reservador(subLista, asignacionFinal));
+        add(r);
 
         revalidate();
         repaint();
