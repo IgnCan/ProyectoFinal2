@@ -14,6 +14,11 @@ import java.util.ArrayList;
  */
 
 public class Reservador extends JButton {
+    /**
+     *
+     * @param subLista  Arraylist con los los  botones seleccionados
+     * @param asignacionFinal Arraylist con los recorridos disponibles y sus respectivos datos
+     */
     public Reservador(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         setText("Reservar");
         int precioPorBoleto = asignacionFinal.getRecorrido().getPresio() + asignacionFinal.getTipoBus().getPresio() + asignacionFinal.getTipoAsiento().getPresio();
