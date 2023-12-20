@@ -2,6 +2,7 @@ package Paneles;
 
 import AsignacionDeHorarios.AsignacionFinal;
 import Botones.Asientos;
+import Botones.Reservador;
 import Enums.Recorrido;
 
 import javax.imageio.ImageIO;
@@ -18,8 +19,8 @@ import java.util.Objects;
  * Crea 
  */
 public class PanelCompra extends JPanel implements PanelChangeListener{
-    CardLayout cardLayout;
-    JPanel cardPanel;
+    private CardLayout cardLayout;
+    private JPanel cardPanel;
     public PanelCompra(CardLayout cardLayout, JPanel cardPanel){
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
@@ -28,6 +29,13 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
     public void mostrarBotones(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         this.removeAll();
         this.setLayout(new GridLayout(3,1));
+
+        JPanel boleto=new JPanel();
+        boleto.setLayout(new GridLayout(0,1));
+        boleto.add(new JLabel("Recorrido: "+asignacionFinal.getRecorrido().getRecorrido()));
+        boleto.add(new JLabel("Horario: "+asignacionFinal.getHorario().getHora()));
+        boleto.add(new JLabel("Tipo de Asiento: "+asignacionFinal.getTipoAsiento().getNombre()));
+        boleto.add(new JLabel("Precio del Boleto: " + asignacionFinal.getPresioTotal()));
 
 
         JPanel p=new JPanel();
@@ -127,10 +135,6 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
 
         JPanel r=new JPanel();
 
-        String identificador = (String) subLista.get(0);
-        JLabel datos = new JLabel("Identificador: " + identificador);
-        r.add(datos);
-
         JButton backButton = new JButton("atras");
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -150,8 +154,8 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         // Configurar el tamaño preferido para el panel del norte
         p.setPreferredSize(new Dimension(getWidth(), getHeight() / 2));
 
-
-        add(p, BorderLayout.NORTH);
+        add(boleto, BorderLayout.NORTH);
+        add(p, BorderLayout.CENTER);
         add(r, BorderLayout.SOUTH);
 
 
@@ -160,49 +164,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
     }
 
 
-    /**
-     * Este boton finaliza la reserva de los pasajes
-     */
 
-    public class Reservador extends JButton {
-        public Reservador(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
-            setText("Reservar");
-            int precioPorBoleto = asignacionFinal.getRecorrido().getPresio() + asignacionFinal.getTipoBus().getPresio() + asignacionFinal.getTipoAsiento().getPresio();
-            addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    int precioTotal = 0;
-                    for (Object elemento : subLista) {
-                        if (elemento instanceof Asientos) {
-                            Asientos bot = (Asientos) elemento;
-                            if (bot.getBackground() == Color.GREEN) {
-                                bot.Desactivacion();
-                                precioTotal = precioTotal + precioPorBoleto;
-                                JFrame Boleto=new JFrame("Boleto");
-                                Boleto.setSize(500,500);
-                                JPanel boleto=new JPanel();
-                                boleto.setLayout(new GridLayout(10,1));
-                                boleto.add(new JLabel("Recorrido:"+asignacionFinal.getRecorrido().getRecorrido()));
-                                boleto.add(new JLabel("Horario:"+asignacionFinal.getHorario().getHora()));
-                                boleto.add(new JLabel("Tipo de Asiento:"+asignacionFinal.getTipoAsiento().getNombre()));
-                                boleto.add(new JLabel("Asiento Comprado:"+bot.getText()));
-                                boleto.add(new JLabel("Precio del Boleto"+precioPorBoleto));
-                                Boleto.add(boleto);
-                                Boleto.setVisible(true);
-                            }
-
-                        } else if (elemento instanceof String) {
-                            System.out.println(elemento);
-                        }
-
-                    }
-                    System.out.println("El precio total de la compra es: $" + precioTotal);
-
-                }
-            });
-
-        }
-    }
 
     @Override
     public void avanPanel () {
