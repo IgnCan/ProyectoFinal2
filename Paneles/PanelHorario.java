@@ -10,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+/**
+ * crea un panel en el que se muestra 
+ */
 public class PanelHorario extends JPanel implements PanelChangeListener {
 
     private IdentificadorCallback identificadorCallback;
