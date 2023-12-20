@@ -12,15 +12,15 @@ import java.util.List;
 
 public class PanelHorario extends JPanel implements PanelChangeListener {
 
-    private IdentificadorCallback identificadorCallback;
+    private APpanel3 APpanel3;
     CardLayout cardLayout;
     JPanel cardPanel;
     public Asignaciones asignaciones = new Asignaciones();
     List<AsignacionFinal> asignacionesRecorrido1;
     AsignacionFinal asignacionFinal;
 
-    public PanelHorario(CardLayout cardLayout, JPanel cardPanel, IdentificadorCallback callback){
-        this.identificadorCallback =callback;
+    public PanelHorario(CardLayout cardLayout, JPanel cardPanel, APpanel3 callback){
+        this.APpanel3 =callback;
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
         this.setBackground(Color.PINK);
@@ -45,7 +45,7 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
                     System.out.println(asignacion.toString());
                     asignacionFinal=asignacion;
                     asignacionFinal.getTipoAsiento().getPresio();
-                    identificadorCallback.onIdentificadorSelected(asignacionFinal);
+                    APpanel3.onIdentificadorSelected(asignacionFinal);
                 }
             });
             this.add(boton);

@@ -26,8 +26,8 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
         this.removeAll();
         this.setLayout(new GridLayout(3,1));
 
-        JPanel boleto=new JPanel();
-        boleto.setLayout(new GridLayout(0,1));
+        JPanel boleto=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        //boleto.setLayout(new GridLayout(0,1));
         boleto.add(new JLabel("Recorrido: "+asignacionFinal.getRecorrido().getRecorrido()));
         boleto.add(new JLabel("Horario: "+asignacionFinal.getHorario().getHora()));
         boleto.add(new JLabel("Tipo de Asiento: "+asignacionFinal.getTipoAsiento().getNombre()));
@@ -129,7 +129,8 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
             }
         }
 
-        JPanel r=new JPanel();
+        JPanel panelInferior=new JPanel(new FlowLayout(FlowLayout.CENTER));
+
 
         JButton backButton = new JButton("atras");
         backButton.addActionListener(new ActionListener() {
@@ -138,21 +139,21 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
                 retroPanel();
             }
         });
-        r.add(backButton);
+        panelInferior.add(backButton);
 
-        r.add(new Reservador(subLista, asignacionFinal));
+        panelInferior.add(new Reservador(subLista, asignacionFinal));
 
         setLayout(new BorderLayout());
 
         // Configurar un BoxLayout para el panel del sur
-        r.setLayout(new BoxLayout(r, BoxLayout.Y_AXIS));
+        //panelInferior.setLayout(new BoxLayout(panelInferior, BoxLayout.Y_AXIS));
 
         // Configurar el tamaño preferido para el panel del norte
         p.setPreferredSize(new Dimension(getWidth(), getHeight() / 2));
 
         add(boleto, BorderLayout.NORTH);
         add(p, BorderLayout.CENTER);
-        add(r, BorderLayout.SOUTH);
+        add(panelInferior, BorderLayout.SOUTH);
 
 
         revalidate();

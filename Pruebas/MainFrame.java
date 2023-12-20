@@ -1,13 +1,13 @@
 package Pruebas;
 
 import AsignacionDeHorarios.AsignacionFinal;
-import Paneles.IdentificadorCallback;
+import Paneles.APpanel3;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class MainFrame extends JFrame implements IdentificadorCallback {
+public class MainFrame extends JFrame implements APpanel3 {
 
     private ArrayList<ArrayList<Object>> listaPrincipal;
     private JPanel cardPanel;

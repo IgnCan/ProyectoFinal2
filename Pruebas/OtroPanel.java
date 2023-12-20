@@ -1,6 +1,6 @@
 package Pruebas;
 
-import Paneles.IdentificadorCallback;
+import Paneles.APpanel3;
 
 import javax.swing.*;
 
@@ -9,10 +9,10 @@ import java.awt.event.ActionListener;
 
 public class OtroPanel extends JPanel {
 
-    private IdentificadorCallback identificadorCallback;
+    private APpanel3 APpanel3;
 
-    public OtroPanel(IdentificadorCallback callback) {
-        identificadorCallback = callback;
+    public OtroPanel(APpanel3 callback) {
+        APpanel3 = callback;
 
         JButton botonEnviarIdentificador = new JButton("Enviar Identificador");
         botonEnviarIdentificador.addActionListener(new ActionListener() {

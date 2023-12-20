@@ -1,25 +1,29 @@
 import AsignacionDeHorarios.AsignacionFinal;
 import Botones.Asientos;
 import Enums.Recorrido;
-import Enums.TipoAsiento;
 import Enums.TipoBus;
 import Paneles.*;
-import Paneles.IdentificadorCallback;
+import Paneles.APpanel3;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
+/**
+ * Crea el JFrame es el gestor principal este crea e muestra los jpanles dependiendo del paso del momento de compra en el que te encuentras.
+ */
+public class Frame  extends JFrame implements APpanel2, APpanel3 {
     private ArrayList<ArrayList<Object>> listaPrincipal;
 
     CardLayout cardLayout = new CardLayout();
     JPanel cardPanel = new JPanel(cardLayout);
-
     PanelRecorrido panelRecorrido = new PanelRecorrido(cardLayout,cardPanel,this);
     PanelHorario panelHorario = new PanelHorario(cardLayout,cardPanel, this );
     Paneles.PanelCompra panelCompra = new Paneles.PanelCompra(cardLayout,cardPanel);
 
+    /**
+     * Metodo constructor
+     */
     public Frame(){
 
         listaPrincipal = new ArrayList<>();
@@ -41,10 +45,19 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
         this.setVisible(true);
     }
 
+    /**
+     *
+     * @param rec
+     */
     public void pasarPanelHorario(Recorrido rec) {
         panelHorario.mostrarPanelHorario(rec);
         cardLayout.next(cardPanel);
     }
+
+    /**
+     *
+     * @param asignacionFinal
+     */
     @Override
     public void onIdentificadorSelected(AsignacionFinal asignacionFinal) {
         agregarNuevaSubLista(asignacionFinal);
@@ -52,6 +65,10 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
         cardLayout.show(cardPanel, "panel3");
     }
 
+    /**
+     *
+     * @param asignacionFinal
+     */
     private void agregarNuevaSubLista(AsignacionFinal asignacionFinal) {
         TipoBus tipoBus = asignacionFinal.getTipoBus();
         
@@ -90,6 +107,12 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
         }
     }
 
+    /**
+     *
+     * @param identificador
+     * @param asignacionFinal
+     * @return
+     */
     private boolean mostrarBotonesDeSubLista(String identificador, AsignacionFinal asignacionFinal) {
         for (ArrayList<Object> subLista : listaPrincipal) {
             String subListaIdentificador = (String) subLista.get(0);
@@ -101,6 +124,11 @@ public class Frame  extends JFrame implements APpanel2, IdentificadorCallback {
         return false;
     }
 
+    /**
+     *
+     * @param identificador String
+     * @return
+     */
     private boolean existeIdentificador(String identificador) {
         for (ArrayList<Object> subLista : listaPrincipal) {
             String subListaIdentificador = (String) subLista.get(0);
