@@ -52,8 +52,8 @@ public class Asignaciones {
 
     /**
      * Método público que retorna todas las listas que tengan asignado el recorrido solicitado
-     * @param rec
-     * @return List<AsignacionFinal> asing.obtenerAsignacionFinal(rec)
+     * @param rec obtiene la lista de asignaciones finales usando este recorrido
+     * @return List<AsignacionFinal> asing.obtenerAsignacionFinal(rec) es la lista con horarios pedida
      */
     public List<AsignacionFinal> obtenerAAsignacionFinal(Recorrido rec) {
         return asing.obtenerAsignacionFinal(rec);

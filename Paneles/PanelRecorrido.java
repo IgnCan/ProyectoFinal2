@@ -23,7 +23,7 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
     private String rutaImagen = "Visuales/OIG.jpg";
 
     /**
-     * Crea los botones con los recorridos y los agrega al JPanel.
+     * Crea los botones con los recorridos recorriendo su enum y los agrega al JPanel.
      * @param cardLayout CardLayout
      * @param cardPanel JPanel
      * @param clickListener APpanel2

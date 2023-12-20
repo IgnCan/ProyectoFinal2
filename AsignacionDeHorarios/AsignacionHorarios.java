@@ -19,6 +19,7 @@ public class AsignacionHorarios {
      * @param horario
      * @param tipoAsiento
      * @param tipoBus
+     * @param noRecorrido
      */
 
     public void AsingnacionFinal(Recorrido recorrido, Horario horario, TipoAsiento tipoAsiento, TipoBus tipoBus, int noRecorrido) {

@@ -30,9 +30,9 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
     /**
      * Constructor, define cardLayout, cardPanel y callback los que son utilizados en otros métodos de la clase.
      *
-     * @param cardLayout CardLayout
+     * @param cardLayout CardLayout usado para poder moverse entre sus JPaneles
      * @param cardPanel JPanel
-     * @param callback APpanel
+     * @param callback APpanel llama a la interfaz para moverse al panel siguiente cuando sea necesario
      */
 
     public PanelHorario(CardLayout cardLayout, JPanel cardPanel, APpanel3 callback){
@@ -72,7 +72,7 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
                     System.out.println(asignacion.toString());
                     asignacionFinal=asignacion;
                     asignacionFinal.getTipoAsiento().getPresio();
-                    APpanel3.onIdentificadorSelected(asignacionFinal);
+                    APpanel3.pasarPanelCompra(asignacionFinal);
                 }
             });
             this.add(boton);
@@ -100,8 +100,6 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
             }
         });
         add(backButton);
-//        // Cambiar al segundo panel
-//        this.show(mainPanel, "Panel2");
 
         // Repintar el frame para que los cambios sean visibles
         revalidate();

@@ -65,12 +65,12 @@ public class AsignacionFinal {
     }
 
     /**
-     * override de Método toString se usa para entregar un string identiicador para
+     * Override de Método toString se usa para entregar un string identiicador para
      * @return String horario, tipo de asiento, tipo de bus y precio del pasaje
      */
     @Override
     public String toString() {
-        return "Horario: " + horario.getHora() + ", Tipo de Asiento: " + tipoAsiento.getNombre() + ", Tipo de Bus: " + tipoBus.getNombre() + "; Precio del pasaje: "+ presioTotal + noRecorrido;
+        return recorrido.getRecorrido() + "Horario: " + horario.getHora() + ", Tipo de Asiento: " + tipoAsiento.getNombre() + ", Tipo de Bus: " + tipoBus.getNombre() + "; Precio del pasaje: "+ presioTotal + noRecorrido;
     }
 
     /**

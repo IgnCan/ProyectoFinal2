@@ -7,5 +7,8 @@ package Interfaces;
  */
 public interface PanelChangeListener {
     void avanPanel();
+    /**
+     * Metodo encargado de hacer retroceder entre paneles, usado en panelHorario y panelCompra
+     */
     void retroPanel();
 }

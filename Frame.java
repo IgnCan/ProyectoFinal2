@@ -20,7 +20,7 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
     JPanel cardPanel = new JPanel(cardLayout);
     PanelRecorrido panelRecorrido = new PanelRecorrido(cardLayout,cardPanel,this);
     PanelHorario panelHorario = new PanelHorario(cardLayout,cardPanel, this );
-    Paneles.PanelCompra panelCompra = new Paneles.PanelCompra(cardLayout,cardPanel);
+    PanelCompra panelCompra = new PanelCompra(cardLayout,cardPanel);
 
     /**
      * Metodo constructor, agrega paneles y modifica cualidades de JFrame.
@@ -47,7 +47,7 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
     }
 
     /**
-     *Muestra panelHorario
+     *Muestra panelHorario una vez recibido el recorrido desde panelRecorrido
      * @param rec recorrido
      */
     public void pasarPanelHorario(Recorrido rec) {
@@ -56,11 +56,11 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
     }
 
     /**
-     *
+     * recibe la asignacionFinal desde panelHorario y ejecuta los metodos para crear la lista o llamarla usando el string identificador.
      * @param asignacionFinal
      */
     @Override
-    public void onIdentificadorSelected(AsignacionFinal asignacionFinal) {
+    public void pasarPanelCompra(AsignacionFinal asignacionFinal) {
         agregarNuevaSubLista(asignacionFinal);
         // Cambiar a la tarjeta del panel de mostrar botones después de agregar una nueva sublista
         cardLayout.show(cardPanel, "panel3");
@@ -90,12 +90,8 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
                     nuevaSubLista.add(boton1);
                 }
             }
-//            Asientos boton2 = new Asientos("Botón 2");
-//
-//            nuevaSubLista.add(boton2);
 
             listaPrincipal.add(nuevaSubLista);
-
 
             System.out.println("Nueva sub-lista creada con identificador " + asignacionFinal.toString());
             mostrarBotonesDeSubLista(asignacionFinal.toString(), asignacionFinal);
