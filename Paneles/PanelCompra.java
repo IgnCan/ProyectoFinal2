@@ -16,16 +16,29 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * Crea 
+ * Crea un panel que muestra los botones de Asientos ademas de los satos del recorrido, un boton para volver atras y cambiar de recorrido y otro para realizar la reserva.
  */
-public class PanelCompra extends JPanel implements PanelChangeListener{
+public class PanelCompra extends JPanel implements PanelChangeListener {
     private CardLayout cardLayout;
     private JPanel cardPanel;
-    public PanelCompra(CardLayout cardLayout, JPanel cardPanel){
-        this.cardPanel=cardPanel;
-        this.cardLayout=cardLayout;
+
+    /**
+     * Método constructor
+     *
+     * @param cardLayout CardLayout
+     * @param cardPanel  JPanel
+     */
+    public PanelCompra(CardLayout cardLayout, JPanel cardPanel) {
+        this.cardPanel = cardPanel;
+        this.cardLayout = cardLayout;
         //this.setBackground(ImageIcon());
     }
+
+    /**
+     * Muestra los botones de los asientos dependiendo de le tipo de bus seleccionado y los datos relacionados al recorridos y agrega los botones para realizar la reserva y volver al paso anterior.
+     * @param subLista ArrayList con los datos de los asientos dependiendo de el tipo de bus.
+     * @param asignacionFinal AsignacionFinal datos de el recorrido.
+     */
     public void mostrarBotones(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         this.removeAll();
         this.setLayout(new GridLayout(3,1));
@@ -164,12 +177,17 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
     }
 
 
-
-
+    /**
+     * avanza un panel
+     */
     @Override
     public void avanPanel () {
         cardLayout.next(cardPanel);
     }
+
+    /**
+     * retrocede un panel
+     */
     public void retroPanel () {
         cardLayout.previous(cardPanel);
     }
