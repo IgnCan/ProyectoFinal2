@@ -18,6 +18,10 @@ public class PanelCompra extends JPanel implements PanelChangeListener {
     private CardLayout cardLayout;
     private JPanel cardPanel;
 
+    private Image imagenFondo;
+
+    private String rutaImagen = "Visuales/OIG.jpg";
+
     /**
      * Método constructor
      *
@@ -39,7 +43,11 @@ public class PanelCompra extends JPanel implements PanelChangeListener {
         this.removeAll();
         this.setLayout(new GridLayout(3,1));
 
+        this.imagenFondo = new ImageIcon(rutaImagen).getImage();
+
         JPanel boleto=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        boleto.setBackground(new Color(0, 0, 0, 0));
+
         //boleto.setLayout(new GridLayout(0,1));
         boleto.add(new JLabel("Recorrido: "+asignacionFinal.getRecorrido().getRecorrido()));
         boleto.add(new JLabel("Horario: "+asignacionFinal.getHorario().getHora()));
@@ -142,7 +150,8 @@ public class PanelCompra extends JPanel implements PanelChangeListener {
             }
         }
 
-        JPanel panelInferior=new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JPanel panelInferior = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelInferior.setBackground(new Color(0, 0, 0, 0));
 
 
         JButton backButton = new JButton("atras");
@@ -187,6 +196,14 @@ public class PanelCompra extends JPanel implements PanelChangeListener {
      */
     public void retroPanel () {
         cardLayout.previous(cardPanel);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (imagenFondo != null) {
+            g.drawImage(imagenFondo, 0, 0, getWidth(), getHeight(), this);
+        }
     }
 
 }
