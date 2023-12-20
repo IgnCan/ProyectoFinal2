@@ -175,6 +175,17 @@ public class PanelCompra extends JPanel implements PanelChangeListener{
                             if (bot.getBackground() == Color.GREEN) {
                                 bot.Desactivacion();
                                 precioTotal = precioTotal + precioPorBoleto;
+                                JFrame Boleto=new JFrame("Boleto");
+                                Boleto.setSize(500,500);
+                                JPanel boleto=new JPanel();
+                                boleto.setLayout(new GridLayout(10,1));
+                                boleto.add(new JLabel("Recorrido:"+asignacionFinal.getRecorrido().getRecorrido()));
+                                boleto.add(new JLabel("Horario:"+asignacionFinal.getHorario().getHora()));
+                                boleto.add(new JLabel("Tipo de Asiento:"+asignacionFinal.getTipoAsiento().getNombre()));
+                                boleto.add(new JLabel("Asiento Comprado:"+bot.getText()));
+                                boleto.add(new JLabel("Precio del Boleto"+precioPorBoleto));
+                                Boleto.add(boleto);
+                                Boleto.setVisible(true);
                             }
 
                         } else if (elemento instanceof String) {
