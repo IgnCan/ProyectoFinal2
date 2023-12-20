@@ -125,9 +125,9 @@ public class Frame  extends JFrame implements APpanel2, APpanel3 {
     }
 
     /**
-     *
+     * Verifica que exista el identificador
      * @param identificador String identificador del recorrido
-     * @return boolean
+     * @return boolean verdadero o falso dependiendo si encontro o no dicho identificador
      */
     private boolean existeIdentificador(String identificador) {
         for (ArrayList<Object> subLista : listaPrincipal) {

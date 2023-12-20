@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * Crea un panel que muestra los botones de Asientos ademas de los satos del recorrido, un boton para volver atras y cambiar de recorrido y otro para realizar la reserva.
+ * Crea un panel que muestra los botones de Asientos adémas de los satos del recorrido, un botón para volver atrás y cambiar de recorrido y otro para realizar la reserva.
  */
 public class PanelCompra extends JPanel implements PanelChangeListener {
     private CardLayout cardLayout;
@@ -23,7 +23,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener {
     private String rutaImagen = "Visuales/OIG.jpg";
 
     /**
-     * Método constructor
+     * Método constructor.
      *
      * @param cardLayout CardLayout
      * @param cardPanel  JPanel
@@ -35,9 +35,9 @@ public class PanelCompra extends JPanel implements PanelChangeListener {
     }
 
     /**
-     * Muestra los botones de los asientos dependiendo de le tipo de bus seleccionado y los datos relacionados al recorridos y agrega los botones para realizar la reserva y volver al paso anterior.
-     * @param subLista ArrayList con los datos de los asientos dependiendo de el tipo de bus.
-     * @param asignacionFinal AsignacionFinal datos de el recorrido.
+     * Muestra los botones de los asientos dependiendo del tipo de bus seleccionado y los datos relacionados al recorrido y agrega los botones para realizar la reserva y volver al paso anterior.
+     * @param subLista ArrayList con los datos de los asientos dependiendo del tipo de bus.
+     * @param asignacionFinal AsignacionFinal datos del recorrido.
      */
     public void mostrarBotones(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {
         this.removeAll();
@@ -187,7 +187,7 @@ public class PanelCompra extends JPanel implements PanelChangeListener {
 
 
     /**
-     * avanza un panel
+     * avanza un panel.
      */
     @Override
     public void avanPanel () {
@@ -195,12 +195,16 @@ public class PanelCompra extends JPanel implements PanelChangeListener {
     }
 
     /**
-     * retrocede un panel
+     * retrocede un panel.
      */
     public void retroPanel () {
         cardLayout.previous(cardPanel);
     }
 
+    /**
+     * Modifica el fondo del panel con una imagen.
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

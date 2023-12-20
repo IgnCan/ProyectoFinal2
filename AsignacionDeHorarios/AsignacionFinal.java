@@ -17,7 +17,7 @@ public class AsignacionFinal {
     private int presioTotal;
 
     /**
-     * Método Constructor de recorrido, horario, tipo de asiento y tipo bus
+     * Método Constructor de recorrido, horario, tipo de asiento y tipo bus.
      * @param recorrido
      * @param horario
      * @param tipoAsiento
@@ -32,7 +32,7 @@ public class AsignacionFinal {
     }
 
     /**
-     * getter de horario
+     * getter de horario.
      * @return Horario horario
      */
     public Horario getHorario() {
@@ -40,7 +40,7 @@ public class AsignacionFinal {
     }
 
     /**
-     * getter de tipoAsiento
+     * getter de tipoAsiento.
      * @return TipoAsiento tipoAsiento
      */
     public TipoAsiento getTipoAsiento() {
@@ -48,7 +48,7 @@ public class AsignacionFinal {
     }
 
     /**
-     * getter de tipoBus
+     * getter de tipoBus.
      * @return TipoBus tipoBus
      */
     public TipoBus getTipoBus() {
@@ -63,7 +63,7 @@ public class AsignacionFinal {
     }
 
     /**
-     * override de Método toString
+     * override de Método toString.
      * @return String horario, tipo de asiento, tipo de bus y precio del pasaje
      */
     @Override

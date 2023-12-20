@@ -9,14 +9,14 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
- * Este boton finaliza la reserva de los pasajes, al ser presionado llamara a un panel emergente que pedira confirmar si has recibido el
+ * Este botón finaliza la reserva de los pasajes, al ser presionado llama a un panel emergente que pide confirmar si has recibido el
  * pago por la reserva mostrando el valor total de la compra, si se confirma el pago efectua la reserva, si no, la cancela
  */
 
 public class Reservador extends JButton {
     /**
      *
-     * @param subLista  Arraylist con los los  botones seleccionados
+     * @param subLista  Arraylist con los botones seleccionados
      * @param asignacionFinal Arraylist con los recorridos disponibles y sus respectivos datos
      */
     public Reservador(ArrayList<Object> subLista, AsignacionFinal asignacionFinal) {

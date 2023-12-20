@@ -11,16 +11,21 @@ import java.util.List;
 /**
  * Clase Asignaciones se encarga de asignar los horarios, tipo de bus y tipo de asientos diponibles para cada recorrido
  */
+
 public class Asignaciones {
 
     /**
-     * asing es una lista que almacena las caracteristicas de cada recorrido
+     * asing es una lista que almacena las características de cada recorrido
      */
+
     private AsignacionHorarios asing = new AsignacionHorarios();
 
     /**
-     *Método construcor que
+     * Método constructor que a una lista de asignaciones le agrega los recorridos que estime el usuario
+     * usando el formato asign.add(Recorrido, Horario, TipoAsiento, TipoBus);
+     * estos recorridos son agregados automáticamente al sistema al iniciarlo, por lo que una vez listos solo quedaria ejecutar.
      */
+
     public Asignaciones(){
         // Asignacion a RECORRIDO1
         asing.AsingnacionFinal(Recorrido.RECORRIDO1, Horario.HORARIO_2, TipoAsiento.EJECUTIVO, TipoBus.DOS_PISOS);
@@ -42,7 +47,7 @@ public class Asignaciones {
     }
 
     /**
-     * Métododo público que retorna todas las listas que tengan asignado el recorrido solicitado
+     * Método público que retorna todas las listas que tengan asignado el recorrido solicitado
      * @param rec
      * @return List<AsignacionFinal> asing.obtenerAsignacionFinal(rec)
      */

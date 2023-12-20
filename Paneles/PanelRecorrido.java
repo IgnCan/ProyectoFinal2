@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Crea un Jpanel con los botones para seleccionr el recorrido.
+ * Crea un Jpanel con los botones para seleccionar el recorrido.
  */
 public class PanelRecorrido extends JPanel implements PanelChangeListener {
 
@@ -36,7 +36,7 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
 
         Recorrido[] recorridos = Recorrido.values();
 
-        setLayout(new GridLayout(0, 1));
+        //setLayout(new GridLayout(0, 1));
 
         JLabel seleccion = new JLabel("Seleccion de Recorrido:");
         //seleccion.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -66,7 +66,7 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
     }
 
     /**
-     * avanza un panel
+     * Avanza un panel.
      */
     @Override
     public void avanPanel() {
@@ -74,20 +74,24 @@ public class PanelRecorrido extends JPanel implements PanelChangeListener {
     }
 
     /**
-     * retocede un panel
+     * retocede un panel.
      */
     @Override
     public void retroPanel() {
     }
 
     /**
-     * getter de rec
+     * getter de rec.
      * @return  Recorrido rec
      */
     public Recorrido getRec() {
         return rec;
     }
 
+    /**
+     * Modifica el fondo del panel con una imagen.
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

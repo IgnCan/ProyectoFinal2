@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Asientos extends JButton {
     /**
-     * si es 1 desactiva el boton y lo deja en rojo
+     * si es 1 desactiva el boton y lo deja en rojo.
      */
     int apagado=0;
     public Asientos(String text) {
@@ -26,8 +26,8 @@ public class Asientos extends JButton {
     }
 
     /**
-     * Este metodo se encarga de desactivar el boton, y modificar el valor de apagado a 1, esto permite mantener
-     * el boton desactivado en compras multiples y guardar su estado al cambiar de bus, recorrido, etc.
+     * Este metodo se encarga de desactivar el botón, y modificar el valor de apagado a 1, esto permite mantener
+     * el botón desactivado en compras multiples y guardar su estado al cambiar de bus, recorrido, etc.
      */
     public void Desactivacion(){
         this.apagado=1;

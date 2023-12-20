@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 /**
- * crea un panel en el que se muestra 
+ * Crea un panel en el que se muestra los horarios disponibles de acuerdo al recorrido seleccionado.
  */
 public class PanelHorario extends JPanel implements PanelChangeListener {
 
@@ -26,14 +26,24 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
 
     private String rutaImagen = "Visuales/OIG.jpg";
 
+    /**
+     * Constructor, define cardLayout, cardPanel y callback los que son utilizados en otros métodos de la clase.
+     *
+     * @param cardLayout CardLayout
+     * @param cardPanel JPanel
+     * @param callback APpanel
+     */
+
     public PanelHorario(CardLayout cardLayout, JPanel cardPanel, APpanel3 callback){
         this.APpanel3 =callback;
         this.cardPanel=cardPanel;
         this.cardLayout=cardLayout;
-        //this.setBackground(Color.PINK);
     }
 
-
+    /**
+     *  Muestra los botones co los horarios.
+     * @param rec Recorrio elegido por el usuario
+     */
     public void mostrarPanelHorario(Recorrido rec) {
 
         this.removeAll();
@@ -89,15 +99,26 @@ public class PanelHorario extends JPanel implements PanelChangeListener {
         revalidate();
         repaint();
     }
+
+    /**
+     * Permite avanzar un panel
+     */
     @Override
     public void avanPanel() {
         cardLayout.next(cardPanel);
     }
 
+    /**
+     * Permite retroceder un panel
+     */
     public void retroPanel() {
         cardLayout.previous(cardPanel);
     }
 
+    /**
+     * modifica el fondo de panel con una imagen.
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
