@@ -17,5 +17,4 @@ Ignacio Candia\
 
 - Dificultades en encontrar los patrones de diseño que se acomodara a nuestras necesidades.\
 - El desarroo de el sistema de compra, ya que la implementascion de sublistas con distintos tipos de objetos que almacenara los pasajes y sus respectivos datos fue muy confuso.\
-- Distribucion del tiempo, por la carga academica al final de semestre en ramos demandantes de nuestra malla curricular no pudimos dedicar el tiemppo deseado y requerido para terminar satisfactoriamente el proyecto.\
 - No utilizamos de manera ideal las ventajas que nos proporciona Github, debido a que preferimos trabajar de manera sincronica a traves del uso de la herrameinta Code with me de intellij para compartir ideas e ir aplicadolas al mismo tiempo, ya que ambos compartiamos disponibilidad de horarios al momentos de trabajr en el proyecto.
